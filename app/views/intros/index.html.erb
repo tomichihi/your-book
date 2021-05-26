@@ -1,0 +1,26 @@
+<main class="main">
+  <div class="inner">
+    <%#if user_signed_in?%>
+      <div class="greeting">
+      <%if user_signed_in? %>
+        ようこそ
+         <%= link_to current_user.name, root_path, class: :greeting__link%>
+         さん
+      <%end%>
+
+      </div> 
+    <%#end%>
+    <div class="card__wrapper">
+      <div class="card">
+  <%#= link_to image_tag(intro.image, class: :card__img ),prototype_path(prototype.id)%>
+  <div class="card__body">
+    <%#= link_to intro.name, prototype_path(prototype.id), class: :card__title %>
+    <p class="card__summary">
+      <%#= intro.review %>
+    </p>
+    <%#= link_to intro.user.name, user_path(intro.user_id), class: :card__user %>
+  </div>
+</div>
+    </div>
+  </div>
+</main>
