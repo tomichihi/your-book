@@ -1,7 +1,8 @@
 class IntrosController < ApplicationController
-  
-  def index
+  before_action :authenticate_user!, only: [:edit,:update,:destroy,:new]
 
+  def index
+     @intros = Intro.all 
   end
 
   def new
@@ -9,29 +10,49 @@ class IntrosController < ApplicationController
   end
   
   def create
-    @intro = Intro.new(intro_params)
+    @intro = Intro.create(intro_params)
+ 
     if @intro.save
-      redirect_to root_path
+      redirect_to root_path 
     else
-      render :new
+     render :new
     end
   end
 
   def edit
-
+    @intro = Intro.find(params[:id])
+  
+    unless current_user.id == @intro.user_id
+      redirect_to action: :index
+    end 
   end
 
   def update
+    @intro = Intro.find(params[:id])
 
+    if @intro.update(intro_params)
+      redirect_to intro_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+   @intro = Intro.find(params[:id])
+   @intro.destroy
+
+   redirect_to root_path
   end
   
   def show
-    
+    @intro = Intro.find(params[:id])
+    @comment = Comment.new
+    @comments = @intro.comments.includes(:user)
   end
 
   private
   def intro_params
-    params.require(:intro).permit(:name, :book, :review, :category, :image).merge(user_id: current_user.id)
+    params.require(:intro).permit(:book, :review, :category_id, :image).merge(user_id: current_user.id)
   end
 
 end

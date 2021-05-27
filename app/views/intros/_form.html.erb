@@ -1,16 +1,21 @@
 <%= form_with model: intro, local: true do |f|%>
   <div class="field">
-    <%= f.label :book, "本の名前 ＊必須" %><br />
+    <%= f.label :book, "本の名前" %><br />
     <%= f.text_area :book, class: :form__text_1, id:"intro_title" %>
   </div>
 
   <div class="field">
-    <%= f.label :review, "どんな本ですか？ ＊必須" %><br />
+    <%= f.label :review, "どんな本ですか？" %><br />
     <%= f.text_area :review, class: :form__text_2, id:"intro_catch_copy" %>
   </div>
 
   <div class="field">
-    <%= f.label :image, "本の画像を貼りましょう！ ＊必須ではありません" %><br />
+    <%= f.label :category, "カテゴリを選びましょう" %><br />
+    <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image, "本の表紙、または本のイメージにあった画像を貼りましょう！ " %><br />
     <%= f.file_field :image, id:"intro_image" %>
   </div>
 
