@@ -1,9 +1,10 @@
 <main class="main">
   <div class="inner">
     <div class="prototype__wrapper">
-      <p class="prototype__hedding">
-      <%= @intro.book %></p>
-      <%= link_to @intro.user.name, root_path(@intro.user_id), class: :prototype__user %>
+      <div class="prototype__hedding">
+      <%= @intro.book %>
+      <%= link_to @intro.user.name, profile_path(@intro.user_id), class: :prototype__user %>
+      <%= link_to @intro.genre.name, genre_index_path(@intro.genre_id), class: :prototype__user %>
 
       <% if user_signed_in? && current_user.id == @intro.user_id %>
         <div class="prototype__manage">
@@ -41,7 +42,7 @@
           <% @comments.each do |comment| %>
             <li class="comments_list">
               <%= comment.text%>
-              <%= link_to comment.user.name, root_path(comment.user_id), class: :comment_user %>
+              <%= link_to comment.user.name, profile_path(comment.user_id), class: :comment_user %>
             </li>
           <% end %>
         </ul>

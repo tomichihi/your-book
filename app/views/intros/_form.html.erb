@@ -10,8 +10,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :category, "カテゴリを選びましょう" %><br />
-    <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
+    <%= f.label :genre, "ジャンルを選びましょう" %><br />
+    <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"genre-select"}) %>
   </div>
 
   <div class="field">

@@ -44,6 +44,7 @@ has_many :comments
 | image             |        |             |
 
 belongs_to :user
+belongs_to :genre
 has_many   :comments
 
 ## comments テーブル
@@ -55,4 +56,18 @@ has_many   :comments
 
 belongs_to :user
 belongs_to :intro
+
+| Column     | Type       | Options    |
+| --------   | ------     | -----------|
+| hobby      | string     | null: false|
+| favorite   | text       | null: false|
+| comment    | text       | null: false|
+
+belongs_to :user
+
+| Column     | Type       | Options    |
+| --------   | ------     | -----------|
+| name       | text       | null: false|
+
+has_many :intros
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       

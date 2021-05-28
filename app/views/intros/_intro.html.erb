@@ -1,10 +1,11 @@
-<div class="card">
-  <%= link_to image_tag(intro.image, class: :card__img ),intro_path(intro.id)%>
+<%= link_to(intro_path(intro.id), class: 'card') do %>  
+  <%= image_tag(intro.image, class: :card__img )%>
   <div class="card__body">
-    <%= link_to intro.book, root_path, class: :card__title %>
+    <div class= "card__title"><%=intro.book%></div>
     <p class="card__summary">
       <%= intro.review %>
     </p>
-    <%= link_to intro.user.name, root_path, class: :card__user %>
+    
   </div>
-</div>
+
+<%end%>

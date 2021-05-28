@@ -1,0 +1,20 @@
+<%= form_with model: @profile, local: true do |f|%>
+  <div class="field">
+    <%= f.label :hobby, "趣味" %><br />
+    <%= f.text_area :hobby, class: :form__text_1, id:"intro_title" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :favorite, "どんな本、映画、音楽が好きですか？" %><br />
+    <%= f.text_area :favorite, class: :form__text_2, id:"intro_catch_copy" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :comment, "その他、御自由に自己紹介しましょう" %><br />
+    <%= f.text_area :comment, class: :form__text_2, id:"intro_catch_copy" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn %>
+  </div>
+<% end %>

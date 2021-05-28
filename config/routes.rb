@@ -5,4 +5,9 @@ Rails.application.routes.draw do
   resources :intros do
     resources :comments
   end
+  resources :profiles do
+  end
+  resources :genre,  only: [:index] do
+  end
+
 end
