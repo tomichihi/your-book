@@ -2,7 +2,7 @@ class IntrosController < ApplicationController
   before_action :authenticate_user!, only: [:edit,:update,:destroy,:new]
 
   def index
-    @intros = Intro.all 
+    @intros = Intro.all.order('created_at DESC')
   end
 
   def new
@@ -11,7 +11,6 @@ class IntrosController < ApplicationController
   
   def create
     @intro = Intro.create(intro_params)
- binding.pry
     if @intro.save
       redirect_to root_path 
     else

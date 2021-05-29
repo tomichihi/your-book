@@ -1,11 +1,15 @@
 <main class="main">
   <div class="inner">
     <div class="prototype__wrapper">
-      <div class="prototype__hedding">
-      <%= @intro.book %>
-      <%= link_to @intro.user.name, profile_path(@intro.user_id), class: :prototype__user %>
-      <%= link_to @intro.genre.name, genre_index_path(@intro.genre_id), class: :prototype__user %>
-
+      <div class="prototype__heading">
+        <%= @intro.book %>
+        <div class="person-parent">
+          <div class= "person">投稿者</div>
+          <%= link_to @intro.user.name, profile_path(@intro.user_id), class: :prototype__user %>
+        </div>
+        <%= link_to "ジャンル：" + @intro.genre.name + "の作品をもっとみる", genres_path(@intro.genre.id), class: :prototype__user %>
+      </div>
+      
       <% if user_signed_in? && current_user.id == @intro.user_id %>
         <div class="prototype__manage">
           <%= link_to "編集する", edit_intro_path(@intro.id), class: :prototype__btn_1 %>
@@ -20,13 +24,24 @@
       <div class="prototype__body">
         <div class="prototype__detail">
           <p class="detail__title">レビュー</p>
-          <p class="detail__message">
-            <%= @intro.review %></p>
+          <div class = "detail__parent">
+            <p class="detail__message"><%= @intro.review %></p>
+            <div class="likes_parent">
+              <% if user_signed_in?%>
+                <%if current_user.likes != []%>
+                  <%=link_to "いいねを取り消す", intro_like_path(@intro.id),method: :delete,class: :likes__link_1 %>
+                   <%else%>
+                  <%=link_to "いいね", intro_likes_path(@intro.id),method: :post,class: :likes__link_2 %>
+                <%end%>
+              <%end%>
+              <p class="likes_count">いいね数 <%=@intro.likes.count%></p>
+            </div>
+          </div>  
         </div>
       </div>
 
+    <% if user_signed_in?%>
       <div class="prototype__comments">
-        <% if user_signed_in?%>
           <%= form_with model:[@intro,@comment],local: true do |f|%>
             <div class="field">
               <%= f.label :text, "コメント" %><br />
@@ -44,10 +59,8 @@
               <%= comment.text%>
               <%= link_to comment.user.name, profile_path(comment.user_id), class: :comment_user %>
             </li>
-          <% end %>
         </ul>
       </div>
-
-    </div>
+    <% end %>
   </div>
 </main>
