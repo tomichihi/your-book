@@ -2,7 +2,7 @@ class IntrosController < ApplicationController
   before_action :authenticate_user!, only: [:edit,:update,:destroy,:new]
 
   def index
-     @intros = Intro.all 
+    @intros = Intro.all.order('created_at DESC')
   end
 
   def new
@@ -11,7 +11,6 @@ class IntrosController < ApplicationController
   
   def create
     @intro = Intro.create(intro_params)
- 
     if @intro.save
       redirect_to root_path 
     else
@@ -52,7 +51,7 @@ class IntrosController < ApplicationController
 
   private
   def intro_params
-    params.require(:intro).permit(:book, :review, :category_id, :image).merge(user_id: current_user.id)
+    params.require(:intro).permit(:book, :review, :genre_id, :image).merge(user_id: current_user.id)
   end
 
 end

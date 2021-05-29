@@ -3,6 +3,12 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'intros#index'
   resources :intros do
-    resources :comments
+    resources :comments, only: [:create]
+    resources :likes, only: [:create, :destroy]
   end
+  resources :profiles do
+  end
+  resources :genres,  only: [:index] do
+  end
+
 end

@@ -1,0 +1,20 @@
+<main class="main">
+  <div class="inner">
+    <div class="prototype__wrapper">
+      <div class="prototype__hedding"><%="ジャンル：" + @genre.name%></div>
+      <div class="genre-intros">
+        <div class="card__wrapper">
+         <% @genre.intros.each do |intro| %>          
+         <%= link_to(intro_path(intro.id), class: 'card') do %>  
+          <%= image_tag(intro.image, class: :card__img )%>
+          <div class="card__body">
+           <div class= "card__title"><%=intro.book%></div>
+           <p class="card__summary"><%= intro.review %></p>
+          </div>
+         <%end%>
+       <%end%>
+      </div>
+      </div>
+    </div>
+  </div>
+</main>
