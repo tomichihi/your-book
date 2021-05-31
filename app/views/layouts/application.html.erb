@@ -27,6 +27,7 @@
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete ,class: :nav__btn %>
               <%= link_to "本を紹介する", new_intro_path, class: :nav__btn %>
               <%= link_to "プロフィールを見る", profile_path(current_user.id), class: :nav__btn %>
+              <%= link_to "ルームに入る", root_path, class: :nav__btn%>
              </div>
            <%end%> 
 

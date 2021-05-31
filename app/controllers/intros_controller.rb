@@ -1,5 +1,5 @@
 class IntrosController < ApplicationController
-  before_action :authenticate_user!, only: [:edit,:update,:destroy,:new]
+  before_action :authenticate_user!, only: [:edit,:update,:destroy,:new,:create]
 
   def index
     @intros = Intro.all.order('created_at DESC')

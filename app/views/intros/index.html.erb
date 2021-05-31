@@ -4,12 +4,9 @@
       <div class="greeting">
         ようこそ
          <%= link_to current_user.name, root_path(current_user.id), class: :greeting__link%>
-         さん
-
-      </div> 
+         さん</div> 
     <%end%>
     <div class="card__wrapper">
-      <%= render partial: "intro", collection: @intros %>
-    </div>
+    <%= render partial: "intro", collection: @intros %></div>
   </div>
 </main>

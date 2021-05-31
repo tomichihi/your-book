@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   end
   resources :genres,  only: [:index] do
   end
-
+  resources :rooms , only: [:index, :new, :create, :destroy] do
+  end
 end
