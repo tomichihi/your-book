@@ -57,6 +57,7 @@ has_many   :comments
 belongs_to :user
 belongs_to :intro
 
+## profiles
 | Column     | Type       | Options    |
 | --------   | ------     | -----------|
 | hobby      | string     | null: false|
@@ -65,9 +66,40 @@ belongs_to :intro
 
 belongs_to :user
 
+##  genres
+
 | Column     | Type       | Options    |
 | --------   | ------     | -----------|
 | name       | text       | null: false|
 
 has_many :intros
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+
+## likes
+
+| Column     | Type       | Options    |
+| --------   | ------     | -----------|
+| user       | references | foreign_key, null:false   |
+
+## rooms
+| Column     | Type       | Options    |
+| --------   | ------     | -----------|
+| name       | string     |null:false  |
+
+## user_rooms
+| Column     | Type       | Options    |
+| --------   | ------     | -----------|
+| user       | references |
+|foreign_key,null:false   |
+| room       | references |
+|foreign_key,null:false   |
+
+## messages
+| Column     | Type       | Options    |
+| --------   | ------     | -----------|
+| content    | text       |
+| null:false              |
+| user       | references |
+|foreign_key,null:false   |
+| room       | references |
+|foreign_key,null:false   |
+

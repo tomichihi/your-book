@@ -38,6 +38,7 @@ a {
 
 .header {
   background: url(../img/old.jpeg) center / cover;
+  height: 150px;
   width: 100vw;
   
   
@@ -50,6 +51,7 @@ a {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   position: absolute;
   top: 5px;
   right: 10px;
@@ -70,6 +72,19 @@ a {
   border: 1px black;
   border-radius: 3px;
   transition: 0.4s ease;
+  animation-name: fadedown;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+}
+@keyframes fadedown {
+from {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
   
 }
 
@@ -79,7 +94,21 @@ a {
   font-size: 45px;
   margin-left: 20px;
   margin-bottom: 10px;
+  animation-name: fadedown;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
 }
+@keyframes fadedown {
+from {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
 .nav__btn:hover{
   background :rgb(200, 252, 187);
   transition-duration: 0.8s;
@@ -93,13 +122,14 @@ a {
   text-decoration: none;
   user-select: none;
 }
+
 .nav__logout:hover{
   opacity: 0.5;
 }
 
 /* フォーム周り */
 .form__wrapper{
-  min-height: calc(100vh - 161px);
+  height: 100vh;
 }
 .form__text_1{
   font-size: 14px;
@@ -141,14 +171,27 @@ a {
 /* メイン */
 .main{
   background-color: rgb(236, 228, 217);
-  height: 100vw;
-  padding-top: 3px;
-  
+  height: 100%;
+  padding-top: 3px; 
 }
 
 .greeting{
-  margin-bottom: 0px;
+  margin-top: 5px;
+  animation-name: fadedown;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
 }
+@keyframes fadedown {
+from {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
 .greeting__link{
   text-decoration: underline;
 }
@@ -160,23 +203,38 @@ a {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  margin-top: 20px;
   min-height: calc(100vh - 161px);
-  margin-top: 30px;
+  animation-name: fadedown;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
 }
+@keyframes fadedown {
+from {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
+/*投稿*/
 .card {
   width: calc((100% - 30px) / 3);
   height: 250px;
   margin-bottom: 30px;
-  margin-top: 30px;
   margin-left: 5px;
   margin-right: 5px;
 }
 .card:hover {
   opacity: 0.4;
-  transition-duration: 0.3s;
+  transition-duration: 0.5s;
 }
 .card__img {
   margin-bottom: 16px,;
+  min-height: 230px;
 }
 .card__title {
   display: block;
@@ -203,25 +261,30 @@ a {
   text-align: right;
   text-decoration: underline;
 }
+/*投稿*/
 
 /* 詳細ページ */
 .prototype__wrapper{
   min-height: calc(100vh - 161px);
 }
+
 .prototype__heading{
   font-size: 25px;
   font-weight: bold;
   margin-left: 30px;
   margin-top: 10px;
 }
+
 .person{
   font-size: 20px;
   margin-left: 20px;
 }
+
 .person-parent{
   display: flex;
   margin-top: 5px;
 }
+
 .prototype__user{
   display: block;
   font-size: 20px;
@@ -236,17 +299,31 @@ a {
   margin: 0 auto;
   padding: 16px 0;
 }
+
 .prototype__detail{
   display: flex;
   align-items: left;
   flex-direction: column;
   margin-bottom: 0px;
 }
+
 .likes_parent{
   width: 250px;
   display: flex;
   justify-content: space-around;
 }
+
+.count{
+  font-size: 15px;
+  margin-left: 3px;
+  margin-bottom: 1px;
+}
+.likes_count{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
 .detail__title{
   font-size: 18px;
   font-weight: bold;
@@ -269,7 +346,6 @@ a {
   user-select: none;
   border-radius: 3px;
   transition: 0.4s ease;
-  margin: 0 4px;
 }
 
 .prototype__btn_2{
@@ -281,29 +357,29 @@ a {
   user-select: none;
   border-radius: 3px;
   transition: 0.4s ease;
-  margin: 0 4px;
 }
 
 .prototype__btn_1:hover{
   color: rgb(94, 207, 94);
-  transition: 0.5s ease;
+  transition: 0.3s ease;
 
 }
 
 .prototype__btn_2:hover{
   color: rgb(221, 16, 47);
-  transition: 0.5s ease;
+  transition: 0.3s ease;
 
 }
 .likes__link_1:hover{
   color: rgb(221, 16, 47);
-  transition: 0.5s ease;
+  transition: 0.3s ease;
 
 }
+
 .likes__link_2:hover{
   color: rgb(94, 207, 94);
-  transition: 0.5s ease;
-
+  transition: 0.3s ease;
+  
 }
 
 .prototype__comments{
@@ -313,11 +389,12 @@ a {
 
 .comments_lists{
   padding-left: 20px;
+
 }
 
 .comments_list{
   padding-bottom: 5px;
-  width: 400px;
+  width: 600px;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -358,6 +435,435 @@ a {
   color: #fff;
   font-size: 10px;
 }
+/*ルーム*/
+.wrapper {
+  display: flex;
+  background-image: url(wood2.jpg);
+  background-position: center;
+  background-size: cover; 
+  width: 100%;
+  height: 100vh;
+}
+.side-bar-parent{
+  background-image: url(wood6.jpg);
+  background-position: center;
+  background-size: cover; 
+}
+.side-bar {
+  background-color: whitesmoke;
+  min-width: 300px;
+  height: 100vh;
+}
+.side-bar-header {
+  height: 100px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-name a{
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
+}
+.create-room a {
+  font-size: 13px;
+  border: 1px solid white;
+  padding: 14px;
+  color: white;
+  text-decoration: none;
+}
+.rooms_parent{
+  background-image: url(wood3.jpg);
+  background-position: center;
+  background-size: cover; 
+  width: 100%;
+  height: calc(100vh - 100px);
+
+}
+.rooms {
+  padding: 0 20px;
+  overflow: scroll;
+}
+.room {
+  padding: 20px 0 40px;
+}
+
+.room-name a {
+  text-decoration: none;
+  color:black;
+}
+.chat {
+  width: 100vw;
+}
+.chat-header-parent{
+  background-image: url(wood4.jpg);
+  background-position: center;
+  background-size: cover;
+  
+}
+.chat-header {
+  height: 100px;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.header-title {
+  color: white;
+  font-size: 24px;
+  margin-top: 36px;
+}
+
+.header-button {
+  margin-top: 40px;
+}
+
+.header-button a {
+  text-decoration: none;
+  border: 1px solid white;
+  color: white;
+  padding: 20px;
+}
+/*メッセージ*/
+.message_wrapper{
+  background-image: url(wood2.jpeg);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: calc(100vh - 100px - 90px);
+}
+
+.messages {
+  height: calc(100vh - 100px - 90px);
+  padding: 46px 40px 0;
+  overflow: scroll;
+}
+.message {
+  margin: 10px 0 0 0;
+}
+
+.upper-message{
+  display: flex;
+}
+
+.message-user {
+  color: #434a54;
+  font-size: 16px;
+}
+
+.message-date {
+  color: #999;
+  font-size: 12px;
+  padding-left: 10px;
+}
+
+.lower-message {
+  margin-top: 10px;
+}
+
+.message-content {
+  color: #434a54;
+  font-size: 14px;
+  margin-bottom: 40px;
+}
+
+.form {
+  background-color: #DDDDDD;
+  height: 90px;
+  padding: 20px 40px;
+  display: flex;
+}
+
+.form-input {
+  background-color: white;
+  display: flex;
+  width: 100%;
+}
+
+.form-message {
+  border: none;
+  height: 50px;
+  width: 100%;
+  padding-left: 10px;
+}
+
+.form-submit {
+  background-color: #38AEF0;
+  border: none;
+  color: white;
+  font-size: 16px;
+  height: 50px;
+  margin-left: 15px;
+  padding: 0 20px;
+}
+.form-image {
+  font-size: 12px;
+  background-color: lightblue;
+  color: white;
+  padding: 12px;
+  width: 60px;
+  margin: 5px 10px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+h1 {
+  letter-spacing: 2px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 10px;
+  color: #f05050;
+  font-size: 14px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+}
+
+.chat-room-form {
+  width: 980px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.chat-room-form__errors {
+  margin: 30px 0;
+  padding: 20px 40px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  text-align: center;
+}
+.chat-room-form__label {
+  display: block;
+  line-height: 50px;
+  font-weight: bold;
+  text-align: right;
+}
+.chat-room-form__input {
+  float: left;
+  width: 100%;
+  line-height: 30px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+}
+.chat-room-form__action-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  color: #fff;
+  background-color: #38aef0;
+  border: 0;
+}
+.chat-room-form__field {
+  margin-top: 30px;
+}
+.chat-room-form__field:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.chat-room-form__field--left {
+  float: left;
+  width: 30%;
+  padding-right: 20px;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+.chat-room-form__field--right {
+  float: right;
+  width: 70%;
+}
+
+.chat-room-user {
+  padding: 0 15px;
+  line-height: 50px;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+  width: 500px;
+  margin: 0 auto;
+}
+.chat-room-user:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.chat-room-user__name {
+  float: left;
+}
+.chat-room-user__btn {
+  float: right;
+  display: inline-block;
+  cursor: pointer;
+}
+.chat-room-user__btn--add {
+  color: #38aef0;
+}
+.chat-room-user__btn--remove {
+  color: #f05050;
+}
+
+.chat-room-user__name a {
+  text-decoration: none;
+  color: #38aef0;
+}
+
+select {
+  width: 500px;
+  height: 50px;
+}
+
+.top-header {
+  background-color: #434a54;
+  height: 80px;
+  width: 100%;
+}
+.field_with_errors {
+  display: contents;
+}
+
+/*購入*/
+.transaction-contents {
+  width: 100vw;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+}
+
+.transaction-main {
+  background-color: #FFF;
+  width: 70vw;
+  min-width: 450px;
+  padding: 10vh 10vw;
+}
+
+.transaction-title-text {
+  text-align: center;
+  border-bottom: 2px solid #f5f5f5;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+/* 購入内容の表示 */
+
+.item-price-text {
+  font-size: 15px;
+  margin-right: 20px;
+}
+
+.item-price-sub-text {
+  font-size: 12px;
+}
+
+/* /購入内容の表示 */
+
+/* 支払額の表示 */
+.item-payment {
+  height: 120px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 2px solid #f5f5f5;
+  font-weight: bold;
+}
+
+.item-payment-title {
+  font-size: 20px;
+}
+
+.item-payment-price {
+  font-size: 25px;
+}
+
+/* /支払額の表示 */
+
+/* カード情報の入力 */
+.form-group{
+  height: 100px;
+}
+.credit-card-form {
+  border-bottom: 2px solid #f5f5f5;
+  margin-top: 15px;
+  padding-bottom: 30px;
+}
+
+
+.info-input-haedline {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+.input-default{
+ width: 50%;
+ height: 50px;
+}
+
+.available-card {
+  display: flex;
+  height: 35px;
+}
+
+.card-logo {
+  width: 40px;
+  margin: 5px 5px;
+}
+
+.input-expiration-date-wrap {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  line-height: 55px;
+}
+
+.input-expiration-date {
+  width: 20%;
+  margin-top: 5px;
+  height: 48px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  resize: none;
+  line-height: 45px;
+  text-align: center;
+}
+
+/* /カード情報の入力 */
+
+/* 配送先の入力 */
+
+
+.buy-btn {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.buy-red-btn {
+  width: 100%;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+}
 
 /* タブレット対応 */
 @media (max-width: 1024px) {
@@ -378,13 +884,15 @@ a {
   .card__wrapper{
     display: flex;
     justify-content: space-between;
+    margin-top: 20px;
   }
   .card {
     width: calc((100% - 100px) / 2);
     height: 300px;
   }
   .card__img {
-    max-height: 240px;
+    height: 240px;
+    width: 350px;
   }
   .prototype_image{
     width: 60%;
@@ -403,25 +911,35 @@ a {
   .logo {
     width: 120px;
   }
+
   .page-heading {
     font-size: 20px;
   }
+
+  .card__wrapper{
+    margin-top: 20px;
+  }
   .card {
-    width: 100%;
+    width: 350px;
     margin-bottom: 60px;
   }
+
   .card__title {
     font-size: 18px;
   }
+
   .card__summary {
     font-size: 14px;
   }
+
   .prototype_image{
     width: 100%;
   }
+
   .table{
     width: 100%;
   }
+
   .main{
     height: 40%;
   }

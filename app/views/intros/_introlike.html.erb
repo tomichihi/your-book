@@ -1,0 +1,21 @@
+  <div class="likes_parent">
+    <% if user_signed_in?%>
+      <% if current_user.liked_by?(intro.id)  %>
+        <div class="likes_count" id = "like_1">
+          <%=link_to intro_like_path(intro,Like.find_by(intro: intro, user: current_user) ),class: "like-link",method: :delete,remote: true do%>
+            <i class="fa fa-heart unlike-btn"></i>
+          <%end%>
+          <div class="count"><%=intro.likes.count%></div>
+        </div>
+          
+         <%else%>   
+
+        <div class="likes_count" id = "like_2"><%=link_to intro_likes_path(intro.id),class: "like-link",method: :post,remote: true do%>
+          <i class="fa fa-heart like-btn"></i>
+          <%end%>
+          <div class="count"><%=intro.likes.count%></div>
+        </div>
+                              
+      <%end%>                                            
+    <%end%>                                                   
+  </div>
