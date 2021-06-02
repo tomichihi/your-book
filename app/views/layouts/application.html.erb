@@ -5,9 +5,9 @@
     <title>Your Book</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://js.pay.jp/v1/"></script>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_pack_tag 'application' %>    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900&display=swap" rel="stylesheet">
   </head>
 
   <body>
@@ -15,28 +15,27 @@
       <div class="inner">
         <div class="nav">
          <%= link_to "Your Book", root_path,class: :nav__left %>
-          <%if user_signed_in? %>
-           <%if current_user.profile == nil%>
+        <%if user_signed_in? %>
+          <%if current_user.profile == nil%>
              <div class="nav__right"> 
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete ,class: :nav__btn %>
                <%= link_to "本を紹介する", new_intro_path, class: :nav__btn %>
                <%= link_to "プロフィールを作成する", new_profile_path, class: :nav__btn %>
              </div> 
              <%else%>
-             <div class="nav__right"> 
+            <div class="nav__right"> 
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete ,class: :nav__btn %>
               <%= link_to "本を紹介する", new_intro_path, class: :nav__btn %>
-              <%= link_to "プロフィールを見る", profile_path(current_user.id), class: :nav__btn %>
-              <%= link_to "ルームに入る", root_path, class: :nav__btn%>
-             </div>
-           <%end%> 
+              <%= link_to "プロフィールを見る", profile_path(current_user.id), class: :nav__btn %> 
+            </div>                  
+          <%end%> 
 
            <%else%>
             <div class="nav__right">
               <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
               <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
             </div>
-          <%end%>
+        <%end%>
         </div>
       </div>
     </header>
