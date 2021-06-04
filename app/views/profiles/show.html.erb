@@ -1,16 +1,12 @@
 <main class="main">
   <div class="inner">
-    <div class = "profile-wrap"> 
-      <div class = "profile-header"> 
-       <div class = "profile-header-text">
-       プロフィール</div> 
-      </div>
-    </div>
+      <div class = "profile-header"> <div class = "profile-header-text">プロフィール</div> </div>
+    
      
     <div class = "profile-group"> 
       <div class = "profile-wrap"> 
         <div class = "profile"> ユーザー</div>
-          <label class = "profile-text"><%=@user.name%></label> 
+          <div class = "profile-text"><%=@user.name%></div> 
                                                                                     
       </div>                                             
     </div>
@@ -18,7 +14,7 @@
     <div class = "profile-group"> 
       <div class = "profile-wrap"> 
         <div class = "profile"> 趣味</div>
-          <label class = "profile-text"><%=@user.profile.hobby%></label> 
+          <div class = "profile-text"><%=@user.profile.hobby%></div> 
                                                                                     
       </div>                                             
     </div>
@@ -26,7 +22,7 @@
     <div class = "profile-group"> 
       <div class = "profile-wrap"> 
         <div class = "profile"> 好きな本、映画、音楽など</div>
-          <label class = "profile-text"><%=@user.profile.favorite%></label> 
+          <div class = "profile-text"><%=@user.profile.favorite%></div> 
                                                                                     
       </div>                                             
     </div>
@@ -34,7 +30,7 @@
     <div class = "profile-group"> 
       <div class = "profile-wrap"> 
         <div class = "profile"> 一言コメント</div>
-          <label class = "profile-text"><%=@user.profile.comment%></label> 
+          <div class = "profile-text"><%=@user.profile.comment%></div> 
                                                                                     
       </div>                                             
     </div>
@@ -42,11 +38,10 @@
       <div class = 'edit-parent'>
         <%if current_user.id == @profile.user_id %>
           <div><%= link_to '編集する', edit_profile_path(@user.id), class: 'edit-text' %></div>
-          <div><%= link_to '戻る', :back, class: 'edit-text' %></div>
+          <div><%= link_to '戻る', root_path, class: 'edit-text' %></div>
             <%else%>
-          <div><%= link_to '戻る', :back, class: 'edit-text' %></div>
+          <div><%= link_to '戻る', root_path, class: 'edit-text' %></div>
         <%end%>
       </div>                                      
-                                                  
-  </div>
+  </div>                                                
 </main>

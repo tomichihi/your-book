@@ -33,20 +33,27 @@ a {
   text-decoration: none;
   color: #3b4043;
 }
-
-/* ヘッダー */
+/*基礎*/
 
 .header {
   background: url(../img/old.jpeg) center / cover;
   height: 150px;
-  width: 100vw;
-  
-  
+  width: 100vw; 
 }
+.main{
+  min-height: 900px;
+  height: 100%;
+  padding-top: 3px; 
+  background-image: url(wood2.jpg);
+  background-position: center;
+  background-size: cover; 
+}
+
 .inner {
   width: 1024px;
   margin: 0 auto;
 }
+
 .nav {
   width: 100%;
   display: flex;
@@ -56,10 +63,12 @@ a {
   top: 5px;
   right: 10px;
 }
+
 .logo {
   width: 200px;
   font-size: 20px;
 }
+
 .nav__btn{
   display: inline-block;
   padding: 0.4em 1.6em;
@@ -76,6 +85,7 @@ a {
   animation-duration: 2s;
   animation-iteration-count: 1;
 }
+
 @keyframes fadedown {
 from {
     opacity: 0;
@@ -131,6 +141,7 @@ to {
 .form__wrapper{
   height: 100vh;
 }
+
 .form__text_1{
   font-size: 14px;
   width: 70%;
@@ -169,11 +180,6 @@ to {
 }
 
 /* メイン */
-.main{
-  background-color: rgb(236, 228, 217);
-  height: 100%;
-  padding-top: 3px; 
-}
 
 .greeting{
   margin-top: 5px;
@@ -182,14 +188,14 @@ to {
   animation-iteration-count: 1;
 }
 @keyframes fadedown {
-from {
+  from {
     opacity: 0;
     transform: translateY(-10px);
-}
-to {
+  }
+  to {
     opacity: 1;
     transform: translateY(0);
-}
+  }
 }
 
 .greeting__link{
@@ -198,6 +204,9 @@ to {
 .page-heading {
   font-size: 30px;
   margin-bottom: 28px;
+  color: black;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  
 }
 .card__wrapper {
   display: flex;
@@ -210,14 +219,14 @@ to {
   animation-iteration-count: 1;
 }
 @keyframes fadedown {
-from {
+  from {
     opacity: 0;
     transform: translateY(-10px);
-}
-to {
+  }
+  to {
     opacity: 1;
     transform: translateY(0);
-}
+  }
 }
 
 /*投稿*/
@@ -264,11 +273,11 @@ to {
 /*投稿*/
 
 /* 詳細ページ */
-.prototype__wrapper{
+.your_book__wrapper{
   min-height: calc(100vh - 161px);
 }
 
-.prototype__heading{
+.your_book__heading{
   font-size: 25px;
   font-weight: bold;
   margin-left: 30px;
@@ -285,22 +294,22 @@ to {
   margin-top: 5px;
 }
 
-.prototype__user{
+.your_book__user{
   display: block;
   font-size: 20px;
   color: black;
   margin-left: 20px;
   text-decoration: underline;
   font-family: 'IM Fell DW Pica SC', serif;
-
+  
 }
-.prototype__image{
+.your_book__image{
   width: 90%;
   margin: 0 auto;
   padding: 16px 0;
 }
 
-.prototype__detail{
+.your_book__detail{
   display: flex;
   align-items: left;
   flex-direction: column;
@@ -318,6 +327,7 @@ to {
   margin-left: 3px;
   margin-bottom: 1px;
 }
+
 .likes_count{
   display: flex;
   justify-content: space-around;
@@ -332,12 +342,12 @@ to {
   display: flex;
   justify-content: space-between;
 }
-.prototype__manage{
+.your_book__manage{
   display: flex;
   justify-content: center;
   padding-top: 16px;
 }
-.prototype__btn_1{
+.your_book__btn_1{
   display: block;
   padding: 0.4em 1.6em;
   font-size: 20px;
@@ -348,7 +358,7 @@ to {
   transition: 0.4s ease;
 }
 
-.prototype__btn_2{
+.your_book__btn_2{
   display: block;
   padding: 0.4em 1.6em;
   font-size: 20px;
@@ -359,46 +369,37 @@ to {
   transition: 0.4s ease;
 }
 
-.prototype__btn_1:hover{
-  color: rgb(94, 207, 94);
-  transition: 0.3s ease;
-
-}
-
-.prototype__btn_2:hover{
-  color: rgb(221, 16, 47);
-  transition: 0.3s ease;
-
-}
-.likes__link_1:hover{
-  color: rgb(221, 16, 47);
-  transition: 0.3s ease;
-
-}
-
-.likes__link_2:hover{
+.your_book__btn_1:hover{
   color: rgb(94, 207, 94);
   transition: 0.3s ease;
   
 }
 
-.prototype__comments{
+.your_book__btn_2:hover{
+  color: rgb(221, 16, 47);
+  transition: 0.3s ease;
+  
+}
+.likes__link_1:hover{
+  color: rgb(221, 16, 47);
+  transition: 0.3s ease;
+  
+}
+
+.likes__link_2:hover{
+  color: rgb(94, 207, 94);
+  transition: 0.3s ease; 
+}
+
+.your_book__comments{
   background-color: rgb(252, 244, 233);
   padding: 20px;
 }
 
 .comments_lists{
   padding-left: 20px;
-
 }
 
-.comments_list{
-  padding-bottom: 5px;
-  width: 600px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
 
 .comment_user{
   font-size: 16px;
@@ -407,12 +408,13 @@ to {
 }
 
 /* ユーザーページ */
+
+
 .profile-header-text{
   font-size: 20px;
 }
 
 .profile-wrap{
-  
   margin-top: 20px;
 }  
 .profile-text{
@@ -464,14 +466,23 @@ to {
 .header-name a{
   font-size: 16px;
   color: white;
-  text-decoration: none;
 }
-.create-room a {
+.header-name a:hover{
+  color:wheat;
+}
+.create-room  a{
   font-size: 13px;
-  border: 1px solid white;
-  padding: 14px;
   color: white;
-  text-decoration: none;
+}
+.create-room a:hover{
+  color:wheat;
+}
+.room-out a{
+  font-size: 13px;
+  color: white;
+}
+.room-out a:hover{
+  color: wheat;
 }
 .rooms_parent{
   background-image: url(wood3.jpg);
@@ -479,7 +490,7 @@ to {
   background-size: cover; 
   width: 100%;
   height: calc(100vh - 100px);
-
+  
 }
 .rooms {
   padding: 0 20px;
@@ -493,14 +504,26 @@ to {
   text-decoration: none;
   color:black;
 }
+.room-name a:hover{
+  color: rgb(54, 184, 3);
+}
 .chat {
   width: 100vw;
+}
+.without-new-room{
+  display: flex;
+  padding-left: 50px;
+}
+.without_room{
+  margin-left: 50px;
+}
+.without_room:hover{
+  color: #08d401;
 }
 .chat-header-parent{
   background-image: url(wood4.jpg);
   background-position: center;
   background-size: cover;
-  
 }
 .chat-header {
   height: 100px;
@@ -520,9 +543,11 @@ to {
 
 .header-button a {
   text-decoration: none;
-  border: 1px solid white;
   color: white;
   padding: 20px;
+}
+.header-button a:hover{
+  color: wheat;
 }
 /*メッセージ*/
 .message_wrapper{
@@ -747,9 +772,10 @@ select {
 
 .transaction-main {
   background-color: #FFF;
-  width: 70vw;
+  
+  width: 80vw;
   min-width: 450px;
-  padding: 10vh 10vw;
+  padding: 20vh 20vw;
 }
 
 .transaction-title-text {
@@ -776,10 +802,14 @@ select {
 .item-payment {
   height: 120px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   border-bottom: 2px solid #f5f5f5;
   font-weight: bold;
+  margin-top: 10px;
+}
+.payment-child{
+  display: inline-block;
 }
 
 .item-payment-title {
@@ -793,24 +823,27 @@ select {
 /* /支払額の表示 */
 
 /* カード情報の入力 */
-.form-group{
-  height: 100px;
-}
 .credit-card-form {
+  padding: 120px;
   border-bottom: 2px solid #f5f5f5;
-  margin-top: 15px;
-  padding-bottom: 30px;
+  margin-top: 5px;
+  padding-bottom: 50px;
 }
-
+.form-group{
+  display: inline-block;
+  height: 50px;
+  margin-top: 30px;
+}
 
 .info-input-haedline {
   text-align: center;
   font-weight: bold;
   font-size: 20px;
 }
+
 .input-default{
- width: 50%;
- height: 50px;
+  width: 200px;
+  height: 50px;
 }
 
 .available-card {
@@ -847,7 +880,6 @@ select {
 
 /* 配送先の入力 */
 
-
 .buy-btn {
   display: block;
   width: 50%;
@@ -866,17 +898,23 @@ select {
 }
 
 /* タブレット対応 */
-@media (max-width: 1024px) {
+@media (max-width: 1060px) {
   .header{
     height: 150px;
   }
   .main{
+    min-height: 700px;
     height: 100%;
+    padding-top: 3px; 
+    background-image: url(wood2.jpg);
+    background-position: center;
+    background-size: cover; 
   }
+  
   .inner {
     margin: 0 auto;
     width: 90%;
-
+    
   }
   .page-heading {
     font-size: 24px;
@@ -894,20 +932,25 @@ select {
     height: 240px;
     width: 350px;
   }
-  .prototype_image{
+  .your_book_image{
     width: 60%;
   }
+  
 }
-.prototype__body{
-  margin-bottom: 10px;
-}
-
- /* スマホ表示 */
+/* スマホ表示 */
 @media (max-width: 599px) {
   .header{
     height: 150px;
   }
-
+  .main{
+    min-height: 550px;
+    height: 100%;
+    padding-top: 3px; 
+    background-image: url(wood2.jpg);
+    background-position: center;
+    background-size: cover; 
+  }
+  
   .logo {
     width: 120px;
   }
@@ -921,7 +964,6 @@ select {
   }
   .card {
     width: 350px;
-    margin-bottom: 60px;
   }
 
   .card__title {
@@ -932,7 +974,7 @@ select {
     font-size: 14px;
   }
 
-  .prototype_image{
+  .your_book_image{
     width: 100%;
   }
 
@@ -943,6 +985,7 @@ select {
   .main{
     height: 40%;
   }
+
   .card__wrapper {
     display: flex;
     justify-content: center;

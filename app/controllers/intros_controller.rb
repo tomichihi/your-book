@@ -39,7 +39,6 @@ class IntrosController < ApplicationController
   def destroy
    @intro = Intro.find(params[:id])
    @intro.destroy
-
    redirect_to root_path
   end
   

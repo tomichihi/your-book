@@ -21,12 +21,22 @@
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete ,class: :nav__btn %>
                <%= link_to "本を紹介する", new_intro_path, class: :nav__btn %>
                <%= link_to "プロフィールを作成する", new_profile_path, class: :nav__btn %>
+               <%if current_user.payment == nil%>
+                 <%= link_to "入室する", new_payment_path, class: :nav__btn %>
+                 <%else%>
+                 <%= link_to "入室する", new_room_path, class: :nav__btn %>
+               <%end%>
              </div> 
              <%else%>
             <div class="nav__right"> 
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete ,class: :nav__btn %>
               <%= link_to "本を紹介する", new_intro_path, class: :nav__btn %>
               <%= link_to "プロフィールを見る", profile_path(current_user.id), class: :nav__btn %> 
+              <%if current_user.payment == nil%>
+                 <%= link_to "入室する", new_payment_path, class: :nav__btn %>
+                 <%else%>
+                 <%= link_to "入室する", new_room_path, class: :nav__btn %>
+              <%end%>
             </div>                  
           <%end%> 
 
