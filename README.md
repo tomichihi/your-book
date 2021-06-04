@@ -41,7 +41,6 @@ has_many :comments
 | book              | text   | null: false |
 | review            | text   | null: false |
 | category          | string | null: false |
-| image             |        |             |
 
 belongs_to :user
 belongs_to :genre
@@ -78,28 +77,38 @@ has_many :intros
 
 | Column     | Type       | Options    |
 | --------   | ------     | -----------|
-| user       | references | foreign_key, null:false   |
+| user       | references | foreign_key :true, null:false   |
+belongs_to :user
+belongs_to :intro
 
 ## rooms
 | Column     | Type       | Options    |
 | --------   | ------     | -----------|
 | name       | string     |null:false  |
+has_many :user_rooms, dependent: :destroy
+has_many :users, through: :user_rooms
+has_many :messages, dependent: :destroy
 
 ## user_rooms
 | Column     | Type       | Options    |
 | --------   | ------     | -----------|
-| user       | references |
-|foreign_key,null:false   |
-| room       | references |
-|foreign_key,null:false   |
+| user       | references | foreign_key,null:false |
+| room       | references | foreign_key,null:false |
+belongs_to :user
+belongs_to :room
 
 ## messages
 | Column     | Type       | Options    |
 | --------   | ------     | -----------|
 | content    | text       |
 | null:false              |
-| user       | references |
-|foreign_key,null:false   |
-| room       | references |
-|foreign_key,null:false   |
+| user       | references | foreign_key,null:false   |
+| room       | references | foreign_key,null:false   |
+belongs_to :room
+belongs_to :user
 
+## payment
+| Column     | Type       | Options    |
+| --------   | ------     | -----------|
+| price      | integer    | null:false |
+belongs_to :user

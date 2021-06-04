@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
   resources :genres,  only: [:index] do
   end
-  resources :rooms , only: [:index, :new, :create, :destroy] do
+  resources :rooms, only: [:index, :new, :create, :destroy] do
     resources :messages, only: [:index, :create]
   end
   resources :payments , only: [:new, :create] do
