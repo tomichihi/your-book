@@ -36,7 +36,7 @@ a {
 /*基礎*/
 
 .header {
-  background-image: url(old.jpg);
+  background-image: image-url(old.jpg);
   background-position: center;
   background-size: cover; 
   height: 150px;
@@ -442,7 +442,7 @@ to {
 /*ルーム*/
 .wrapper {
   display: flex;
-  background-image: url(wood2.jpg);
+  background-image: url(/wood2.jpg);
   background-position: center;
   background-size: cover; 
   width: 100%;
