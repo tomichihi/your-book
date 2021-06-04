@@ -36,7 +36,9 @@ a {
 /*基礎*/
 
 .header {
-  background: url(../img/old.jpeg) center / cover;
+  background-image: url(old.jpg);
+  background-position: center;
+  background-size: cover; 
   height: 150px;
   width: 100vw; 
 }
