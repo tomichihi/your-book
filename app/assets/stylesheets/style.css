@@ -35,7 +35,6 @@ a {
 }
 
 /*基礎*/
-
 .header {
   background-image: url(old.jpeg);
   background-position: center;
@@ -440,6 +439,7 @@ to {
   color: #fff;
   font-size: 10px;
 }
+
 /*ルーム*/
 .wrapper {
   display: flex;
@@ -493,7 +493,6 @@ to {
   background-size: cover; 
   width: 100%;
   height: calc(100vh - 100px);
-  
 }
 .rooms {
   padding: 0 20px;
