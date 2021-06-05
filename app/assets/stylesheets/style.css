@@ -239,6 +239,7 @@ to {
   margin-left: 5px;
   margin-right: 5px;
 }
+
 .card:hover {
   opacity: 0.4;
   transition-duration: 0.5s;

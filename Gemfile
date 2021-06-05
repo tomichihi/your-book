@@ -60,3 +60,4 @@ gem 'pry-rails'
 gem 'font-awesome-sass'
 gem 'step_render'
 gem 'payjp'
+gem "aws-sdk-s3", require: false
