@@ -703,6 +703,7 @@ li {
   margin-top: 30px;
 }
 .chat-room-form__field:after {
+  content: "";
   clear: both;
   display: block;
 }
