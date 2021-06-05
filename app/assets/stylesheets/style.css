@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-
 html,
 body,
 ul,
@@ -444,14 +443,14 @@ to {
 /*ルーム*/
 .wrapper {
   display: flex;
-  background-image: url(/wood2.jpg);
+  background-image: image-url("wood2.jpg");
   background-position: center;
   background-size: cover; 
   width: 100%;
   height: 100vh;
 }
 .side-bar-parent{
-  background-image: url(wood6.jpg);
+  background-image: image-url("wood6.jpg");
   background-position: center;
   background-size: cover; 
 }
@@ -489,7 +488,7 @@ to {
   color: wheat;
 }
 .rooms_parent{
-  background-image: url(wood3.jpg);
+  background-image: image-url("wood3.jpg");
   background-position: center;
   background-size: cover; 
   width: 100%;
@@ -525,7 +524,7 @@ to {
   color: #08d401;
 }
 .chat-header-parent{
-  background-image: url(wood4.jpg);
+  background-image: image-url("wood4.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -555,7 +554,7 @@ to {
 }
 /*メッセージ*/
 .message_wrapper{
-  background-image: url(wood2.jpeg);
+  background-image: image-url("wood2.jpeg");
   background-position: center;
   background-size: cover;
   width: 100%;
@@ -909,7 +908,7 @@ select {
     min-height: 700px;
     height: 100%;
     padding-top: 3px; 
-    background-image: url(wood2.jpg);
+    background-image: image-url("wood2.jpg");
     background-position: center;
     background-size: cover; 
   }
@@ -949,7 +948,7 @@ select {
     min-height: 550px;
     height: 100%;
     padding-top: 3px; 
-    background-image: url(wood2.jpg);
+    background-image: image-url("wood2.jpg");
     background-position: center;
     background-size: cover; 
   }
@@ -996,20 +995,3 @@ select {
   
 }
 
-.like-link {
-  text-decoration: none;
-}
-
-.like-link:hover {
-  background-color: #fff!important;
-}
-
-.like-btn {
-  font-size: 15px;
-  color: #808080;
-}
- 
-.unlike-btn {
-  font-size: 15px;
-  color: #e54747;
-}
