@@ -1,4 +1,4 @@
- 
+
 /* リセットCSS */
 * {
   box-sizing: border-box;
@@ -34,6 +34,7 @@ a {
   text-decoration: none;
   color: #3b4043;
 }
+
 /*基礎*/
 
 .header {
@@ -702,7 +703,6 @@ li {
   margin-top: 30px;
 }
 .chat-room-form__field:after {
-  content: "";
   clear: both;
   display: block;
 }
@@ -837,7 +837,7 @@ select {
   margin-top: 30px;
 }
 
-.info-input-haedline {
+.info-input-headline {
   text-align: center;
   font-weight: bold;
   font-size: 20px;
