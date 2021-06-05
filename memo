@@ -1008,3 +1008,4 @@ select {
   font-size: 15px;
   color: #e54747;
 }
+  config.assets.css_compressor = :scss
