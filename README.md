@@ -36,11 +36,12 @@ has_many :introduces
 has_many :comments
 
 ## intros テーブル
-| Column            | Type   | Options     |
-| --------          | ------ | ----------- |
-| book              | text   | null: false |
-| review            | text   | null: false |
-| category          | string | null: false |
+| Column            | Type      | Options     |
+| --------          | ------    | ----------- |
+| book              | text      | null: false |
+| review            | text      | null: false |
+| genre             |references | null: false,foreign_key: true|
+| user              |references | null: false,foreign_key: true|
 
 belongs_to :user
 belongs_to :genre
@@ -51,7 +52,7 @@ has_many   :comments
 | --------   | ------     | ----------- |
 | comment    | text       | null: false |
 | user       | references | null: false,foreign_key :true|
-| introduce  | references | null: false,foreign_key :true|
+| intro      | references | null: false,foreign_key :true|
 
 belongs_to :user
 belongs_to :intro
@@ -62,6 +63,8 @@ belongs_to :intro
 | hobby      | string     | null: false|
 | favorite   | text       | null: false|
 | comment    | text       | null: false|
+| user       |references  | null: false|
+foreign_key:true|
 
 belongs_to :user
 
@@ -69,7 +72,7 @@ belongs_to :user
 
 | Column     | Type       | Options    |
 | --------   | ------     | -----------|
-| name       | text       | null: false|
+| name       | text       | |
 
 has_many :intros
 
@@ -77,14 +80,17 @@ has_many :intros
 
 | Column     | Type       | Options    |
 | --------   | ------     | -----------|
-| user       | references | foreign_key :true, null:false   |
+| user       | references | null:false |  foreign_key:true|
+| intro      | references | null:false |
+foreign_key:true|
+
 belongs_to :user
 belongs_to :intro
 
 ## rooms
 | Column     | Type       | Options    |
 | --------   | ------     | -----------|
-| name       | string     |null:false  |
+| name       | string     | null:false |
 has_many :user_rooms, dependent: :destroy
 has_many :users, through: :user_rooms
 has_many :messages, dependent: :destroy
@@ -102,8 +108,10 @@ belongs_to :room
 | --------   | ------     | -----------|
 | content    | text       |
 | null:false              |
-| user       | references | foreign_key,null:false   |
-| room       | references | foreign_key,null:false   |
+| user       | references | null:false |
+foreign_key:true|
+| room       | references | null:false |
+foreign_key:true|
 belongs_to :room
 belongs_to :user
 
@@ -111,4 +119,7 @@ belongs_to :user
 | Column     | Type       | Options    |
 | --------   | ------     | -----------|
 | price      | integer    | null:false |
+| user       |references  | null:false |
+foreign_key:true|
+
 belongs_to :user
