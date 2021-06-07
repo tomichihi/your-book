@@ -72,7 +72,7 @@ belongs_to :user
 
 | Column     | Type       | Options    |
 | --------   | ------     | -----------|
-| name       | text       | |
+| name       | text       | null:false |
 
 has_many :intros
 
@@ -91,6 +91,7 @@ belongs_to :intro
 | Column     | Type       | Options    |
 | --------   | ------     | -----------|
 | name       | string     | null:false |
+
 has_many :user_rooms, dependent: :destroy
 has_many :users, through: :user_rooms
 has_many :messages, dependent: :destroy
@@ -100,6 +101,7 @@ has_many :messages, dependent: :destroy
 | --------   | ------     | -----------|
 | user       | references | foreign_key,null:false |
 | room       | references | foreign_key,null:false |
+
 belongs_to :user
 belongs_to :room
 
@@ -112,6 +114,7 @@ belongs_to :room
 foreign_key:true|
 | room       | references | null:false |
 foreign_key:true|
+
 belongs_to :room
 belongs_to :user
 
