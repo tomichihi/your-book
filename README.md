@@ -29,7 +29,7 @@ Things you may want to cover:
 
 ## ログインに必要な情報
 ## password tomita820
-## email tsshc820@gmail.com
+## email abc@gmail.com
 ## user_name tomita
 
 ## 利用方法
