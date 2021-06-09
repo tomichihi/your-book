@@ -5,7 +5,7 @@
   <%if current_user.rooms != []%>
   <%= link_to "ルームを作らずに入室する(ルームをお持ちの方はここから入室可能です)", rooms_path(current_user.id),class: :without_room %>
   <%end%></div>
-  <%=form_with model: @room, url: rooms_path, method: :post, local: true do |f|%>
+  <%=form_with model: @room, local: true do |f|%>
     <div class='chat-room-form__field'>
       <div class='chat-room-form__field--left'>
         <%= f.label :チャットルーム名, class: 'chat-room-form__label'%>
