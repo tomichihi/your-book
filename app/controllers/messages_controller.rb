@@ -1,20 +1,15 @@
 class MessagesController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :create]   
+  before_action :authenticate_user!, only: [:index, :create, :show]   
     def index
       @room = Room.find(params[:room_id])
       @message = Message.new
-      @messages = @room.messages.includes(:user)
+      @messages = @room.messages.includes(:user).order(created_at: :desc)
     end 
 
     def create
       @room = Room.find(params[:room_id])
-      @message = @room.messages.create(message_params)
-      if @message.save
-        redirect_to room_messages_path(@room)
-      else
-         @messages = @room.messages.includes(:user)
-        render :index
-      end
+      @message = @room.messages.create(message_params)    
+      render :show
     end
   
     private 

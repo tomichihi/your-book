@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :genres,  only: [:index] do
   end
   resources :rooms, only: [:index, :new, :create, :destroy] do
-    resources :messages, only: [:index, :create]
+    resources :messages, only: [:index, :create, :show]
   end
   resources :payments , only: [:new, :create] do
   end

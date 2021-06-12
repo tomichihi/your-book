@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
-  before_action :authenticate_user!, only: [:index,:new,:create,:destroy]
+  before_action :authenticate_user!, only: [:index,:new,:create,:destroy,:show]
  
    def index
    end
