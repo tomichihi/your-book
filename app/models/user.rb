@@ -11,9 +11,9 @@ class User < ApplicationRecord
   has_many :rooms, through: :user_rooms  
   has_many :messages
 
-  with_options presence: true do
-    validates :name, length: { maximum: 8 }
-  end
+  
+    validates :name, presence: true,length: { maximum: 8 }
+  
 
   def liked_by?(intro_id)
     likes.where(intro_id: intro_id).exists?

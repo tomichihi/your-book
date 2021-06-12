@@ -1,4 +1,6 @@
-<%= form_with model: @profile, local: true do |f|%>
+<%= form_with model: @profile, local: true do |f|%>        
+<%= render 'layouts/error_messages', model: f.object %>
+
   <div class="field">
     <%= f.label :hobby, "趣味" %><br />
     <%= f.text_area :hobby, class: :form__text_1, id:"intro_title" %>

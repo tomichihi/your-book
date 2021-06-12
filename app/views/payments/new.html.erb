@@ -22,6 +22,7 @@
     <div class='credit-card-form'>
         <h1 class='info-input-haedline'>
         クレジットカード情報入力</h1>
+      <%= render 'layouts/error_messages', model: f.object %>
       <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">入力金額</label>
