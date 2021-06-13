@@ -1,49 +1,52 @@
 <main class="main">
   <div class="inner">
     <div class="your_book__wrapper">
-      <div class="your_book__heading">
-        <%= @intro.book %>
-        <div class="person-parent">
-          <div class= "person">投稿者</div>
-          <%= link_to @intro.user.name, profile_path(@intro.user_id), class: :your_book__user %>
-        </div>
-        <%= link_to "ジャンル：" + @intro.genre.name + "の作品をもっとみる", genres_path(@intro.genre.id), class: :your_book__user %>
-      </div>
-      
-      <% if user_signed_in? && current_user.id == @intro.user_id %>
-        <div class="your_book__manage">
-          <%= link_to "編集する", edit_intro_path(@intro.id), class: :your_book__btn_1 %>
-          <%= link_to "削除する", intro_path(@intro.id), method: :delete, class: :your_book__btn_2 %>
-        </div>
-      <% end %>
-
-      <div class="your_book__image">
-        <%= image_tag (@intro.image) %>
-      </div>
-
-      <div class="your_book__body">
-        <div class="your_book__detail">
-          <p class="detail__title">レビュー</p>
-          <div class = "detail__parent">
-            <p class="detail__message"><%= @intro.review %></p>
-        <%= render partial: "intros/introlike" , locals: {intro: @intro}%>
-          </div> 
-        </div>
-      </div>
-
-    <% if user_signed_in?%>
-      <div class="your_book__comments">
-          <%= form_with model:[@intro,@comment], url:intro_comments_path(@intro.id), method: :post, local: true do |f|%>
-            <div class="field">
-              <%= f.label :text, "コメント" %>
-              <%= f.text_field :text, id:"comment_text" %>
+          <div class="your_book__heading">
+            <%= @intro.book %>
+            <div class="person-parent">
+              <div class= "person">投稿者</div>
+              <%= link_to @intro.user.name, profile_path(@intro.user_id), class: :your_book__user %>
             </div>
-            <div class="actions">
-              <%= f.submit "送信する", class: :form__btn,id: :submit  %>
+            <%= link_to "ジャンル：" + @intro.genre.name + "の作品をもっとみる", genres_path(@intro.genre.id), class: :your_book__user %>
+          </div>
+      
+          <% if user_signed_in? && current_user.id == @intro.user_id %>
+            <div class="your_book__manage">
+              <%= link_to "編集する", edit_intro_path(@intro.id), class: :your_book__btn_1 %>
+              <%= link_to "削除する", intro_path(@intro.id), method: :delete, class: :your_book__btn_2 %>
             </div>
           <% end %>
-        <%= render partial: "comments/index", locals: {comment: @comment} %>  
-      </div>
-    <%end%> 
+
+          <div class="your_book__image">
+            <%= image_tag (@intro.image) %>
+          </div>
+
+          <div class="your_book__body">
+            <div class="your_book__detail">
+              <p class="detail__title">レビュー</p>
+              <div class = "detail__parent">
+                <p class="detail__message"><%= @intro.review %></p>
+            <%= render partial: "intros/introlike" , locals: {intro: @intro}%>
+              </div> 
+            </div>
+          </div>
+
+            <% if user_signed_in?%>
+              <div class="your_book__comments">
+                  <%= form_with model:[@intro,@comment], url:intro_comments_path(@intro.id), method: :post, remote: true do |f|%>
+                    <div class="field">
+                      <%= f.label :text, "コメント" %>
+                      <%= f.text_field :text, id:"comment_text" %>
+                    </div>
+                    <div class="actions">
+                      <%= f.submit "送信する", class: :form__btn,id: :submit  %>
+                    </div>
+                  <% end %>
+                <ul class="comments_lists" id="comment">
+                  <%= render partial: "comments/comment", locals: {comments: @comments} %> 
+                </ul> 
+              </div>
+            <%end%> 
+    </div>
   </div> 
 </main>

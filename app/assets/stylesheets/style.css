@@ -42,6 +42,7 @@ a {
   height: 150px;
   width: 100vw; 
 }
+
 .main{
   min-height: 900px;
   height: 100%;
@@ -624,6 +625,10 @@ to {
   height: 50px;
   margin-left: 15px;
   padding: 0 20px;
+}
+.form-submit:hover{
+  background-color: #9cf1fc;
+  transition: 0.3s ease;
 }
 .form-image {
   font-size: 12px;

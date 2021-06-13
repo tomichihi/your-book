@@ -2,14 +2,8 @@ class CommentsController < ApplicationController
    before_action :authenticate_user!, only: [:create]
    def create
     @intro = Intro.find(params[:intro_id])
-    @comment = Comment.create(comm_params)
-    @comments = @intro.comments 
-    
-    if @comment.save
-     redirect_to intro_path (@comment.intro)
-     else
-     render "intros/show"
-    end
+    @comment = @intro.comments.create(comm_params) 
+    render :show
    end
  
    private
