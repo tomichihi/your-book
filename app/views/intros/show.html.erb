@@ -5,7 +5,11 @@
             <%= @intro.book %>
             <div class="person-parent">
               <div class= "person">投稿者</div>
+              <%if @intro.user.profile != nil%>
               <%= link_to @intro.user.name, profile_path(@intro.user_id), class: :your_book__user %>
+              <%else%>
+              <div class="your_book__user"><%= @intro.user.name%></div>
+              <%end%>
             </div>
             <%= link_to "ジャンル：" + @intro.genre.name + "の作品をもっとみる", genres_path(@intro.genre.id), class: :your_book__user %>
           </div>
