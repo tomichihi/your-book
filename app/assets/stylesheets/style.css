@@ -83,22 +83,6 @@ a {
   user-select: none;
   border: 1px black;
   border-radius: 3px;
-  transition: 0.4s ease;
-  animation-name: fadedown;
-  animation-duration: 2s;
-  animation-iteration-count: 1;
-}
-
-@keyframes fadedown {
-from {
-    opacity: 0;
-    transform: translateY(-10px);
-}
-to {
-    opacity: 1;
-    transform: translateY(0);
-}
-  
 }
 
 .nav__left{
@@ -106,20 +90,7 @@ to {
   font-weight: bold;
   font-size: 45px;
   margin-left: 20px;
-  margin-bottom: 10px;
-  animation-name: fadedown;
-  animation-duration: 2s;
-  animation-iteration-count: 1;
-}
-@keyframes fadedown {
-from {
-    opacity: 0;
-    transform: translateY(-10px);
-}
-to {
-    opacity: 1;
-    transform: translateY(0);
-}
+  margin-bottom: 10px; 
 }
 
 .nav__btn:hover{
@@ -236,6 +207,7 @@ to {
 .card {
   width: calc((100% - 30px) / 3);
   height: 250px;
+  margin-top: 20px;
   margin-bottom: 30px;
   margin-left: 5px;
   margin-right: 5px;
@@ -256,7 +228,7 @@ to {
   font-weight: bold;
 }
 .card__body{
-  height:20px ;
+  
 }
 
 .card__summary {
